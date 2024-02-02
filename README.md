@@ -57,7 +57,7 @@ The FedStream Algorithm was made possible with the help of many contributors:
 
  Liwei Che, Jay Kumar, Salah Ud Din, and Zhili Qin
 
-# Citing SFLEDS
+# Citing FedStream
 If you find FedStream useful, please consider giving a star ⭐ and citation
 ```
 @article{mawuli2023fedstream,
