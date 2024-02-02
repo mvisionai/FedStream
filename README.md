@@ -38,6 +38,8 @@ parser = argparse.ArgumentParser()
     parser.add_argument('--enable_fed_privacy', type=str2bool, default=False, const=True, nargs='?', help='Enable privacy for training')
     parser.add_argument('--run_type', choices=['FedStream', 'SingleStream', 'ClientsStream'], default='FedStream', help='experiment')
     args = parser.parse_args()
+```
+
 ### Run
 The provided `fdstream.py` can be run on  any computer provided the python dependencies  are statisfied. Example datasets can be found in the dataset folder. Follow the paper to configure 
 other parameter values for exploration. 
