@@ -37,7 +37,7 @@ class MicroClsuters:
 
             numpy_data.append(list(self.microclusters[keys]))
 
-        new_data = np.asarray(numpy_data)
+        new_data = np.asarray(numpy_data, dytpe="object")
 
         labels_data = new_data[:,3]
 
@@ -301,7 +301,7 @@ class MicroClsuters:
         data_t = data[0:self.zero_index_features]
         class_data = int(data[self.zero_index_features])
 
-        mc= np.asarray(self.getSingleMC(clus_index))
+        mc= np.asarray(self.getSingleMC(clus_index), dtype="object")
 
 
         LS =np.add(mc[0] , data_t)
