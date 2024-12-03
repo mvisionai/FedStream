@@ -154,7 +154,7 @@ def convert_to_numpy(data={}):
     for keys, data_clus in data.items():
         numpy_data.append(list(data_clus))
 
-    return np.asarray(numpy_data)
+    return np.asarray(numpy_data, dtype="object")
 
 def parallize_client_stream(client_key,client_data,data_instance,local_pros,correct_count,acc_window,weights,global_prototype,flags=0):
 
@@ -249,7 +249,7 @@ def parallize_client_stream(client_key,client_data,data_instance,local_pros,corr
     predicted_distance = neighs[0][0][0]
     predicted_cluster = neighs[1][0][0]
 
-    current_clus = np.asarray(local_model.getSingleMC(predicted_cluster))
+    current_clus = np.asarray(local_model.getSingleMC(predicted_cluster), dtype="object")
     original_radius = current_clus[2]
     clus_label = current_clus[3]
     init_psd = current_clus[9]
@@ -266,7 +266,7 @@ def parallize_client_stream(client_key,client_data,data_instance,local_pros,corr
         global_distance = gneighboaurs[0][0][0]
         predicted_global = gneighboaurs[1][0][0]
 
-        current_global_clus = np.asarray(global_prototype.getSingleMC(predicted_global))
+        current_global_clus = np.asarray(global_prototype.getSingleMC(predicted_global), dtype="object")
         global_radius = current_global_clus[2]
         global_label = current_global_clus[3]
         init_psd = current_global_clus[9]
@@ -433,7 +433,7 @@ def parallize_stream(client_key,client_data,data_instance,client_prototype,corre
     #print(neighs)
 
     #exit(1)
-    current_clus = np.asarray(client_prototype.getSingleMC(predicted_cluster))
+    current_clus = np.asarray(client_prototype.getSingleMC(predicted_cluster), dtype="object")
     original_radius = current_clus[2]
     clus_label = current_clus[3]
 
@@ -1149,20 +1149,3 @@ if __name__ == "__main__":
 
     print('max local: ', max_mc)
     run(run_type="FedStream")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
